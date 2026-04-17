@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Westhaven School Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>Westhaven School</h2>
+
+    <button onclick="goTo('dashboard.html')">Home</button>
+    <button onclick="goTo('behaviour.html')">Behaviour</button>
+    <button onclick="goTo('timetable.html')">Timetable</button>
+
+    <div id="sltOnly"></div>
+
+    <button onclick="logout()" class="secondary">Logout</button>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main">
+    <h1>Dashboard</h1>
+
+    <p id="roleDisplay"></p>
+
+    <div class="cards">
+
+      <div class="card-box">
+        <h3>Personal Details</h3>
+        <p>View your account info</p>
+      </div>
+
+      <div class="card-box" onclick="goTo('behaviour.html')">
+        <h3>Behaviour</h3>
+        <p>Log positives and negatives</p>
+      </div>
+
+      <div class="card-box" onclick="goTo('timetable.html')">
+        <h3>Timetable</h3>
+        <p>View your schedule</p>
+      </div>
+
+      <div id="registerCard"></div>
+
+    </div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+
+<script>
+  const role = localStorage.getItem("role");
+
+  document.getElementById("roleDisplay").textContent =
+    "Logged in as: " + role;
+
+  // SLT only menu
+  if (role === "Staff") if (role === "SLT") {
+    document.getElementById("sltOnly").innerHTML = `
+      <button onclick="goTo('register.html')">Register</button>
+    `;
+
+    document.getElementById("registerCard").innerHTML = `
+      <div class="card-box" onclick="goTo('register.html')">
+        <h3>Register</h3>
+        <p>Take attendance</p>
+      </div>
+    `;
+  }
+</script>
+
+</body>
+</html>

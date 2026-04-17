@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - Westhaven</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="container">
+    
+    <div class="card">
+      <h1>Login</h1>
+      <p class="subtitle">Staff Access Only</p>
+
+      <input id="username" type="username" placeholder="username">
+      <input id="password" type="password" placeholder="password">
+
+      <p id="error" class="error"></p>
+
+      <button onclick="login()">Login</button>
+
+      <button class="secondary" onclick="goTo('index.html')">
+        Back
+      </button>
+    </div>
+
+  </div>
+
+<script src="script.js"></script>
+</body>
+</html>

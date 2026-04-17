@@ -122,3 +122,15 @@ input {
 .card-box:hover {
   transform: scale(1.03);
 }
+
+.home {
+  background: linear-gradient(to right, #1e3c72, #2a5298);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dashboard-page {
+  background: #f4f4f4;
+}

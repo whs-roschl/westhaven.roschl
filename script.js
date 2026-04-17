@@ -26,3 +26,8 @@ function login() {
   // Go to dashboard
   window.location.href = "dashboard.html";
 }
+
+function logout() {
+  localStorage.clear();
+  window.location.href = "index.html";
+}
